@@ -3,19 +3,10 @@
 .Rapp.history
 
 # Session Data files
-.RData
+*.RData
 
 # User-specific files
 .Ruserdata
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
 
 # RStudio files
 .Rproj.user/
@@ -37,3 +28,16 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+#software specific files
+*.o
+*.dll
+*.exe
+*.csv
+src/admb/**
+!*.tpl
+
+#untracked folders
+data/**
+docs/**
+results/**
