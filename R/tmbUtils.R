@@ -26,6 +26,7 @@ mkTMBLogisticDat <- function(obs, modname, prType){
   if(prType == 0){
     dat$hyperpars <- 0
   } else {
+    #TODO: hyperpars need to be fixed in TMB cpp files
     dat$hyperpars <- c(-1,4,5,4,0.1,0.1) 
   }
   return(dat)
@@ -96,7 +97,7 @@ mkTMBSpatialInits <- function(df,pr,method, nf = NULL){
 #' @return Fitted objective function, nlminb output, reported values from model, sdreport if true
 #'
 fitTMB <- function(obj.args, opt.args = list(control = list(iter = 800, eval = 800),
-                                              hessian = NULL, scale = 1,
+                                              scale = 1,
                                               lower = -Inf, upper = Inf ),
                     control = list(run.model = TRUE, do.sdreport = TRUE)){
   obj <- do.call(MakeADFun, obj.args)
